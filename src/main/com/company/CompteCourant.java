@@ -1,6 +1,6 @@
 package main.com.company;
 
-public class  CompteCourant {
+public class CompteCourant {
     public String numero;
     public String intitule;
     public double solde;
@@ -8,19 +8,25 @@ public class  CompteCourant {
     public static int nbComptesCourants = 0;
 
     public static void main(String[] args) {
-        System.out.println("cc");
+        System.out.println("min = " + Double.MIN_VALUE);
     }
 
-    public CompteCourant(numero, intitule, solde, montantDecouvertAutorise, nbCompteCourants){
+    public CompteCourant(String numero, String intitule, double solde, double montantDecouvertAutorise){
         this.numero = numero;
         this.intitule = intitule;
         this.solde = solde;
-        this.montantDecouvertautorise = montantDecouvertAutorise;
+        this.montantDecouvertAutorise = montantDecouvertAutorise;
+        ++ nbComptesCourants;
     }
 
+    public void debiter(double montant){
+        this.solde -= montant;
+    }
+
+    public void crediter(double montant){
+        this.solde += montant;
+    }
+
+
+
 }
-
-public CompteCour1 = new CompteCourant("123", "Batman", 1664, -1000, 1);
-public CompteCour2 = new CompteCourant("456", "Robin", 33, -500, 2);
-public Comptecour3 = new CompteCourant("789", "Joker", 2020, 0, 3);
-
