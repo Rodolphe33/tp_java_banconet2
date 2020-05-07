@@ -1,9 +1,9 @@
 package test.com.company;
 
-import junit.*;
 import main.com.company.CompteCourant;
+import org.junit.jupiter.api.Test;
 
-public class CompteCourantTest {
+public class CompteCourantTest extends CompteCourant {
 
 
     @Test
