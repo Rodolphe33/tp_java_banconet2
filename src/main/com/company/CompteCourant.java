@@ -19,14 +19,20 @@ public class CompteCourant {
         ++ nbComptesCourants;
     }
 
+    /**
+     *
+     * @param montant doit être négatif
+     */
     public void debiter(double montant){
-        this.solde -= montant;
-    }
-
-    public void crediter(double montant){
         this.solde += montant;
     }
 
-
+    /**
+     *
+     * @param montant doit être positif
+     */
+    public void crediter(double montant){
+        this.solde += montant;
+    }
 
 }

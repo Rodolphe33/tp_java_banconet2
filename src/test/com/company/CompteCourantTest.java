@@ -68,15 +68,111 @@ public class CompteCourantTest {
         assertEquals(716.66, compteCour3.solde, 0.001);
     }
 
-    /*@Test
-    public void () {
+    @Test
+    public void testCrediter_Zero() {
+
         // Given
-
+        compteCour1.solde = 1664;
+        compteCour2.solde = 33;
+        compteCour3.solde = 0;
         // When
-
+        compteCour1.crediter(0);
+        compteCour2.crediter(0);
+        compteCour3.crediter(6.66);
         // Then
-        assertEquals();
-    }*/
+        assertEquals(1664, compteCour1.solde, 0.001);
+        assertEquals(33, compteCour2.solde, 0.001);
+        assertEquals(6.66, compteCour3.solde, 0.001);
+    }
+
+    @Test
+    public void testCrediter_Negatif() {
+
+        // Given
+        compteCour1.solde = 1664;
+        compteCour2.solde = 33;
+        compteCour3.solde = 0;
+        // When
+        compteCour1.crediter(-60);
+        compteCour2.crediter(-120);
+        compteCour3.crediter(-500);
+        // Then
+        // @TODO
+        assertEquals(1604, compteCour1.solde, 0.001);
+        assertEquals(-87, compteCour2.solde, 0.001);
+        assertEquals(-500, compteCour3.solde, 0.001);
+    }
+
+    @Test
+    public void testDebiter() {
+
+        // Given
+        compteCour1.solde = 1664;
+        compteCour2.solde = 33;
+        compteCour3.solde = 50;
+        // When
+        compteCour1.debiter(-50);
+        compteCour2.debiter(-50);
+        compteCour3.debiter(-50);
+        // Then
+        assertEquals(1714, compteCour1.solde, 0.001);
+        assertEquals(83, compteCour2.solde, 0.001);
+        assertEquals(100, compteCour3.solde, 0.001);
+    }
+
+    @Test
+    public void testDebiter_Decimal() {
+
+        // Given
+        compteCour1.solde = 1664;
+        compteCour2.solde = 33;
+        compteCour3.solde = 50;
+        // When
+        compteCour1.debiter(6.66);
+        compteCour2.debiter(66.66);
+        compteCour3.debiter(666.66);
+        // Then
+        assertEquals(1670.66, compteCour1.solde, 0.001);
+        assertEquals(99.66, compteCour2.solde, 0.001);
+        assertEquals(716.66, compteCour3.solde, 0.001);
+    }
+
+    @Test
+    public void testDebiter_Zero() {
+
+        // Given
+        compteCour1.solde = 1664;
+        compteCour2.solde = 33;
+        compteCour3.solde = 0;
+        // When
+        compteCour1.debiter(0);
+        compteCour2.debiter(0);
+        compteCour3.debiter(6.66);
+        // Then
+        assertEquals(1664, compteCour1.solde, 0.001);
+        assertEquals(33, compteCour2.solde, 0.001);
+        assertEquals(6.66, compteCour3.solde, 0.001);
+    }
+
+    @Test
+    public void testDebiter_Negatif() {
+
+        // Given
+        compteCour1.solde = 1664;
+        compteCour2.solde = 33;
+        compteCour3.solde = 0;
+        // When
+        compteCour1.debiter(-60);
+        compteCour2.debiter(-120);
+        compteCour3.debiter(-500);
+        // Then
+        // @TODO
+        assertEquals(1604, compteCour1.solde, 0.001);
+        assertEquals(-87, compteCour2.solde, 0.001);
+        assertEquals(-500, compteCour3.solde, 0.001);
+    }
+
+
 
     /*@Test
     public void () {
