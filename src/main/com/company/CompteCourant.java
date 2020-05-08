@@ -1,9 +1,9 @@
 package main.com.company;
 
 public class CompteCourant {
-    public String numero;
-    public String intitule;
-    public double solde;
+    protected String numero;
+    protected String intitule;
+    protected double solde;
     public double montantDecouvertAutorise;
     public static int nbComptesCourants = 0;
 
@@ -20,7 +20,7 @@ public class CompteCourant {
     }
 
     /**
-     *
+     * function dediter
      * @param montant doit être négatif
      */
     public void debiter(double montant){
@@ -28,11 +28,22 @@ public class CompteCourant {
     }
 
     /**
-     *
+     * function crediter
      * @param montant doit être positif
      */
     public void crediter(double montant){
         this.solde += montant;
     }
+
+    /**
+     * function getSolde
+     * @param solde
+     * @return
+     */
+    public double getSolde(double solde){
+        this.solde =  solde;
+        return solde;
+    }
+
 
 }
